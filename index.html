@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Welling Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+
+body {
+  font-size: 16px;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+
+/* angular temp top nav */
+nav {
+  background-color: #99aba9;
+  border-bottom: 2px solid #e6d27a;
+  padding: 1rem;
+}
+nav a{
+  padding: 1rem;
+}
+nav a:hover {
+  background: #abc;
+}
+nav a.current {
+  background: #346;
+  color: #dde;
+  text-decoration: none;
+}
+header h1 {
+  background-color: #99aba9;
+  color: #667;
+  font-family: 'Playfair Display SC', Arial, sans-serif;
+  font-size: 250%;
+  letter-spacing: 0.15em;
+  line-height: 4rem;
+  margin: 0;
+  padding-bottom: 0.4em;
+  text-align: center;
+}
+header h2 {
+  background-color: #99aba9;
+  color: #667;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 120%;
+  line-height: 0.5rem;
+  margin: 0;
+  padding: 1rem;
+}
+header {
+  margin: 0px;
+  background-color: rgb(187, 205, 222);
+  border-bottom: 4px solid #e6d27a;
+  padding: 0px;
+}
+
+main {
+  background: rgb(250,250,255);
+  margin: 0;
+  padding: 40px 0;
+}
+
+button {
+  display: inline-block;
+  height: 50px;
+  margin: 40px 0 40px 45vw;
+  width: 200px; }
+
+footer {
+  background-color: #444444;
+  display: block;
+  width: 100%; }
+  footer ul {
+    display: inline-block;
+    margin-left: 8.3%;
+    width: 30%; }
+    footer ul li {
+      background-color: #848484;
+      list-style-type: none; }
+      h2 {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        color: #6767a2;
+        margin-top: 0;
+        text-align: center;
+      }
+a {
+    color: #60686a;
+  }
+  .hidden { display: none; }
+
+      .entrypoint {
+        background: rgba(230,235,240,0.8);
+        box-shadow: 0 0 9px rgba(200,200,180,0.5);
+        cursor: pointer;
+        padding: 1em 2em;
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .aboveground .entrypoint { top: 50%; }
+      .belowground .entrypoint { top: 60px; }
+      /*#site-title {
+        background: rgb(215, 223, 231);
+        border: double 4px #999;
+        margin: 0 auto;
+        text-align: center;
+        width: 40vw;
+      }*/
+
+      #upper-transition { position: relative; }
+      .aboveground {
+        /*background:
+          linear-gradient(to bottom, rgba(190,200,210,1) 0%, rgba(140,145,150,1) 100%);
+        border-radius: 50% 50% 0 0;*/
+        background: url('images/landing_full.jpg');
+        background-size: cover;
+        margin: 0 auto;
+        /*padding: 40px;*/
+        position: relative;
+        height: 70vw;
+        width: 70vw;
+      }
+
+
+      .buildings {
+        background: url('images/skyline.svg') 50% 0% no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .trees {
+        background: url('images/treeline.svg') bottom center no-repeat;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      .belowground {
+        /*background: radial-gradient(
+          ellipse at top,
+          rgba(100,130,180,1),
+          rgba(190,200,210,1)
+        );*/
+        background: url('/images/landing_full.jpg');
+        background-size: cover;
+        background-position: 50% 100%;
+        /*border-radius: 0 0 50% 50%;*/
+        margin: 0 auto 40px;
+        padding: 0;
+        position: relative;
+        height: 23vw;
+        width: 70vw;
+      }
+
+      #nolimetangere {
+        background-color: #444;
+        display: block;
+        height: 360px;
+        margin: 0 auto;
+        /*width: 24em;*/
+        opacity: 1;
+      }
+
+h3{
+  border-bottom: 2px solid #a8afbd;
+  color: #346;
+  font-family: sans-serif;
+}
+img{
+  display: block;
+  margin: 0 auto;
+}
+.page, episodes ul, narrative ul, reference ul{
+  background-color: rgba(255, 255, 255, 0.64);
+  border-bottom: 1px solid #ccc;
+}
+.animation-wrapper {
+  /* for page-turn animation on child .wrapper */
+  perspective: 800px;
+  position: relative; 
+  min-height: 600px;
+}
+ng-component {
+  /* for page-turn animation */
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  width: 100%; /* or less? */
+}
+ng-component, narrative, reference, characters, episodes, landing, main, .wrapper{
+  background: url(../images/wavecut.png) repeat;
+}
+.wrapper{
+  margin: 0;
+  padding: 1em 0;
+}
+episodes ul, narrative ul, reference ul, .wrapper ul{
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 8.3%;
+  width: 33.3%;
+}
+li{
+  line-height: 2em;
+  padding: 10px 0;
+}
+narrative, reference, episodes{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+
+      .bottom-wrapper,
+      footer {
+        position: relative;
+        z-index: 2;
+      }
+      .bottom-wrapper {
+        margin: 0 auto;
+        /*background: white;*/
+        min-height: 5em;
+        position: relative;
+        padding-top: 130px;
+      }
+      .bottom-wrapper img {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Welling Up</h1>
+      <h2>a love story</h2>
+    </header>
+
+    <div class="animation-wrapper">
+
+	<div id="upper-transition">
+
+		<div class="aboveground" id="aboveground">
+			<div class="entrypoint">
+				<a id="listen-link">Welling Up will be launching later in September</a>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+  
+
+</body></html>
